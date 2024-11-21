@@ -3,9 +3,11 @@
 import { useState } from 'react';
 import { Menu, X, Cake } from 'lucide-react';
 import Link from "next/link";
+import {usePathname} from "next/navigation";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname();
 
   const navigation = [
     { name: 'Accueil', href: '/home' },
@@ -33,7 +35,7 @@ function Navbar() {
                 key={item.name}
                 href={item.href}
                 className={`${
-                  location.pathname === item.href
+                  pathname === item.href
                     ? 'text-amber-600'
                     : 'text-gray-600 hover:text-amber-600'
                 } px-3 py-2 rounded-md text-sm font-medium transition-colors`}
@@ -68,7 +70,7 @@ function Navbar() {
                 key={item.name}
                 href={item.href}
                 className={`${
-                  location.pathname === item.href
+                  pathname === item.href
                     ? 'bg-amber-50 text-amber-600'
                     : 'text-gray-600 hover:bg-amber-50 hover:text-amber-600'
                 } block px-3 py-2 rounded-md text-base font-medium transition-colors`}
