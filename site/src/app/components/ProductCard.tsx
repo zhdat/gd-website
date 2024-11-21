@@ -1,6 +1,5 @@
 import type { Product } from '../types';
 import {supabaseUrl} from "@/app/lib/supabase";
-import Image from "next/image";
 
 interface ProductCardProps {
   product: Product;
@@ -11,7 +10,7 @@ function ProductCard({ product, onSelect }: ProductCardProps) {
   return (
     <div className="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
       <div className="relative h-64">
-        <Image
+        <img
           src={`${supabaseUrl}/storage/v1/object/public/pictures/${product.picture}`}
           alt={product.name}
           className="w-full h-full object-cover"

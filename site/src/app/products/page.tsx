@@ -8,7 +8,6 @@ import CategoryFilter from "@/app/components/CategoryFilter";
 import ProductCard from "@/app/components/ProductCard";
 import Footer from "@/app/components/Footer";
 import Navbar from "@/app/components/Navbar";
-import Image from "next/image";
 
 function Page() {
   const [selectedCategory, setSelectedCategory] = useState<ProductCategory>('all');
@@ -74,7 +73,7 @@ function Page() {
                     ×
                   </button>
                 </div>
-                <Image
+                <img
                   src={`${supabaseUrl}/storage/v1/object/public/pictures/${selectedProduct.picture}`}
                   alt={selectedProduct.name}
                   className="w-full h-64 object-cover rounded-lg mb-4"

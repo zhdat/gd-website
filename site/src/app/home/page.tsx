@@ -8,7 +8,6 @@ import {supabaseUrl} from "@/app/lib/supabase";
 import Link from "next/link";
 import Footer from "@/app/components/Footer";
 import Navbar from "@/app/components/Navbar";
-import Image from "next/image";
 
 function Page() {
   const [products, setProducts] = useState<Product[]>([])
@@ -31,7 +30,7 @@ function Page() {
         {/* Hero Section */}
         <section className="relative h-[90vh] flex items-center justify-center">
           <div className="absolute inset-0">
-            <Image
+            <img
               src="https://images.unsplash.com/photo-1579372786545-d24232daf58c?auto=format&fit=crop&q=80"
               alt="Artisan Pastries"
               className="w-full h-full object-cover"
@@ -84,7 +83,7 @@ function Page() {
               {products.slice(0, 3).map((product, index) => (
                 <div key={index}
                      className="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
-                  <Image
+                  <img
                     src={`${supabaseUrl}/storage/v1/object/public/pictures/${product.picture}`}
                     alt={product.name}
                     className="w-full h-64 object-cover"
