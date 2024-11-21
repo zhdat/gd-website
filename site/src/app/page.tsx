@@ -1,5 +1,3 @@
-import Navbar from './components/Navbar';
-import Footer from './components/Footer';
 import React from "react";
 import Page from "@/app/home/page";
 
