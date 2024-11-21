@@ -7,6 +7,7 @@ import {Product} from "@/app/types";
 import {fetchProducts} from "@/app/data/products";
 import Footer from "@/app/components/Footer";
 import Navbar from "@/app/components/Navbar";
+import Image from "next/image";
 
 interface ReservationProduct {
   id: string;
@@ -116,7 +117,7 @@ function Page() {
                     <div key={product.id}
                          className="flex items-center justify-between p-4 border rounded-lg">
                       <div className="flex items-center space-x-4">
-                        <img
+                        <Image
                           src={`${supabaseUrl}/storage/v1/object/public/pictures/${product.picture}`}
                           alt={product.name}
                           className="w-16 h-16 object-cover rounded"

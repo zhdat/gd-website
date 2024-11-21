@@ -10,6 +10,7 @@ import EditProductModal from "@/app/components/ProductModal";
 import {Order, Product} from "@/app/types";
 import Navbar from "@/app/components/Navbar";
 import Footer from "@/app/components/Footer";
+import Image from "next/image";
 
 type Tab = 'products' | 'orders' | 'customers' | 'settings' | 'orderDetails';
 
@@ -253,7 +254,7 @@ function Admin() {
                     {products.map((product) => (
                       <div key={product.id}
                            className="bg-white rounded-lg shadow p-6">
-                        <img
+                        <Image
                           src={`${supabaseUrl}/storage/v1/object/public/pictures/${product.picture}`}
                           alt={product.name}
                           className="w-full h-48 object-contain rounded-lg mb-4"
